@@ -1,0 +1,10 @@
+version: "2.8.0"
+
+services:
+  service:
+    build: .
+    image: ms
+    ports:
+      - 8083:8080
+    container_name: ms-con
+  
