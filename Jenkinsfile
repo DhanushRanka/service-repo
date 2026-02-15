@@ -2,7 +2,7 @@ pipleline{
 
 	agent any
 	stages{
-		stage{
+		stage('Buila dna run service'){
 			steps{
 			
 			withCredentials([usernamePassword(
