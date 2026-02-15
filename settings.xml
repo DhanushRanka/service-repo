@@ -46,8 +46,8 @@
   <servers>
     <server>
       <id>nexus</id>
-      <username>admin</username>
-      <password>Aaaaaaaa</password>
+      <username>${NEXUS_USER}</username>
+      <password>${NEXUS_PASS}</password>
     </server>
   </servers>
 
