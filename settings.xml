@@ -1,15 +1,17 @@
 <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
-   <mirrors>
+
+  <mirrors>
     <mirror>
       <id>nexus</id>
       <mirrorOf>*</mirrorOf>
-      <url>http://nexus:8081/repository/maven-releases/</url>
+      <url>http://nexus:8081/repository/maven-public/</url>
     </mirror>
   </mirrors>
-  
-   <profiles>
+
+
+  <profiles>
     <profile>
       <id>allow-http</id>
       <activation>
@@ -21,9 +23,11 @@
           <url>http://nexus:8081/repository/maven-releases/</url>
           <releases>
             <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
           </releases>
           <snapshots>
             <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
           </snapshots>
         </repository>
       </repositories>
@@ -31,27 +35,20 @@
         <pluginRepository>
           <id>nexus</id>
           <url>http://nexus:8081/repository/maven-releases/</url>
-          <releases>
-            <enabled>true</enabled>
-          </releases>
-          <snapshots>
-            <enabled>true</enabled>
-          </snapshots>
+          <releases><enabled>true</enabled></releases>
+          <snapshots><enabled>true</enabled></snapshots>
         </pluginRepository>
       </pluginRepositories>
     </profile>
   </profiles>
-  
+
+
   <servers>
     <server>
-      <id>nexus-releases</id>
-      <username>${env.NEXUS_USER}</username>
-      <password>${env.NEXUS_PASS}</password>
-    </server>
-    <server>
-      <id>nexus-snapshots</id>
-      <username>${env.NEXUS_USER}</username>
-      <password>${env.NEXUS_PASS}</password>
+      <id>nexus</id>
+      <username>admin</username>
+      <password>Aaaaaaaa</password>
     </server>
   </servers>
+
 </settings>

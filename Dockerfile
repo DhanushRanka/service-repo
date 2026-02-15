@@ -1,12 +1,12 @@
-FROM maven:3.9.6-eclipse-temurin-17 AS builder
+FROM maven:3.9.0-eclipse-temurin-17 AS builder
 WORKDIR /app
 COPY . /app
-RUN mvn clean package
+COPY settings.xml /root/.m2/settings.xml
+
+RUN mvn clean package -s /root/.m2/settings.xml
 
 
 FROM  eclipse-temurin:17-jre
 WORKDIR /app
 COPY --from=builder /app/target/*.jar test.jar
-RUN mkdir -p /root/.m2
-COPY settings.xml /root/.m2/settings.xml
 CMD [ "java", "-jar", "/app/test.jar" ]
