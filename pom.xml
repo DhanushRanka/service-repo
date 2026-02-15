@@ -44,7 +44,7 @@
 		<dependency>
 		    <groupId>com.model</groupId>
 		    <artifactId>model</artifactId>
-		    <version>1.0.0</version>
+		    <version>1.0.1</version>
 		</dependency>
 
 
@@ -53,7 +53,7 @@
 	<repositories>
 	    <repository>
 	        <id>nexus</id>
-	        <url>http://localhost:8081/repository/maven-releases/</url>
+	        <url>http://nexus:8081/repository/maven-releases/</url>
 	    </repository>
 	</repositories>
 
